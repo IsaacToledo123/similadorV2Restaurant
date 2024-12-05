@@ -1,13 +1,12 @@
 package Fuctions;
 
-import Model.Client;
 import Model.Restaurant;
 import javafx.scene.layout.AnchorPane;
 
-public class Waiter implements Runnable{
+public class Mesero implements Runnable{
     private Restaurant restaurant;
     private AnchorPane padre;
-    public Waiter(AnchorPane padre, Restaurant restaurant){
+    public Mesero(AnchorPane padre, Restaurant restaurant){
         this.restaurant=restaurant;
         this.padre=padre;
     }

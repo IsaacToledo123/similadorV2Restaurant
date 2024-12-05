@@ -7,12 +7,12 @@ import Controller.Controller;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class CreateClient implements Runnable {
+public class Comensal implements Runnable {
     private AnchorPane anchor;
     private Restaurant restaurant;
     private Controller controller;
 
-    public CreateClient(AnchorPane anchor, Restaurant restaurant, Controller controller) {
+    public Comensal(AnchorPane anchor, Restaurant restaurant, Controller controller) {
         this.anchor = anchor;
         this.restaurant = restaurant;
         this.controller = controller;

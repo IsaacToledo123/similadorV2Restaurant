@@ -2,9 +2,9 @@ package Fuctions;
 
 import Model.Restaurant;
 
-public class Receptionist implements Runnable{
+public class Receptionista implements Runnable{
     private Restaurant restaurant;
-    public Receptionist(Restaurant restaurant){
+    public Receptionista(Restaurant restaurant){
         this.restaurant=restaurant;
     }
     @Override

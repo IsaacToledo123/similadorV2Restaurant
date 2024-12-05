@@ -1,9 +1,9 @@
 package Controller;
 
-import Fuctions.Chef;
-import Fuctions.CreateClient;
-import Fuctions.Waiter;
-import Fuctions.Receptionist;
+import Fuctions.Cocinero;
+import Fuctions.Comensal;
+import Fuctions.Mesero;
+import Fuctions.Receptionista;
 import Model.Restaurant;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -55,18 +55,18 @@ public class Controller implements Observer {
         Restaurant restaurant = new Restaurant();
         restaurant.addObserver(this);
 
-        Waiter waiter = new Waiter(anchor, restaurant);
+        Mesero waiter = new Mesero(anchor, restaurant);
         Thread hiloWaiter = new Thread(waiter);
         hiloWaiter.setDaemon(true);
         hiloWaiter.start();
 
-        Receptionist receptionist = new Receptionist(restaurant);
-        Chef chef = new Chef(restaurant);
-        CreateClient createClient = new CreateClient(anchor, restaurant, this);
+        Receptionista Receptionista = new Receptionista(restaurant);
+        Cocinero Cocinero = new Cocinero(restaurant);
+        Comensal Comensal = new Comensal(anchor, restaurant, this);
 
-        Thread hiloReceptionist = new Thread(receptionist);
-        Thread hiloChef = new Thread(chef);
-        Thread hiloCreateClient = new Thread(createClient);
+        Thread hiloReceptionist = new Thread(Receptionista);
+        Thread hiloChef = new Thread(Cocinero);
+        Thread hiloCreateClient = new Thread(Comensal);
 
         hiloReceptionist.setDaemon(true);
         hiloReceptionist.start();
